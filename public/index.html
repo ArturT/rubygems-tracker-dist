@@ -11,8 +11,16 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-    <link rel="stylesheet" href="app/1646fe75.app.css"/>
+    <!-- build:css(client) app/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
+      <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,client}) app/app.css -->
+    <link rel="stylesheet" href="app/app.css">
+      <!-- injector:css -->
+      <!-- endinjector -->
+    <!-- endbuild -->
   </head>
   <body ng-app="rubygemsTrackerApp">
     <!--[if lt IE 7]>
@@ -20,7 +28,19 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div ng-include="'components/navbar/navbar.html'"></div>
+
     <div ui-view=""></div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+        <a href="https://twitter.com/ArturTrzop">@ArturT</a> |
+        <a href="https://github.com/ArturT/rubygems-tracker">RubyGems Tracker Github Repo</a>
+        </p>
+        <p>Based on Angular Fullstack v2.0.13</p>
+      </div>
+    </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -37,8 +57,36 @@
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-    <script src="app/889570d3.vendor.js"></script>
+    <!-- build:js({client,node_modules}) app/vendor.js -->
+      <!-- bower:js -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-resource.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-cookies.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-sanitize.min.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/lodash/lodash.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/Chart.js/Chart.min.js"></script>
+      <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+      <!-- endbower -->
+    <!-- endbuild -->
 
-        <script src="app/5a9b4125.app.js"></script>
+        <!-- build:js({.tmp,client}) app/app.js -->
+        <script src="app/app.js"></script>
+          <!-- injector:js -->
+          <script src="app/gem/gem.controller.js"></script>
+          <script src="app/gem/gem.js"></script>
+          <script src="app/gem/gem.service.js"></script>
+          <script src="app/gem/gem_add.controller.js"></script>
+          <script src="app/gem/gem_stats.controller.js"></script>
+          <script src="app/gem/gem_stats.factory.js"></script>
+          <script src="app/main/main.controller.js"></script>
+          <script src="app/main/main.js"></script>
+          <script src="app/services/date.service.js"></script>
+          <script src="components/modal/modal.service.js"></script>
+          <script src="components/navbar/navbar.controller.js"></script>
+          <!-- endinjector -->
+        <!-- endbuild -->
 </body>
 </html>
